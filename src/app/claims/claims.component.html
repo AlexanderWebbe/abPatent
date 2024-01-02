@@ -3,4 +3,22 @@
         {{pageTitle}}
     </div>
 
+    {{claims}}
+    {{myClaims.value}}
+
+    <form class="claim-form" #myClaimsForm="ngForm" (ngSubmit)="processClaims()">
+        <mat-form-field class="claim-full-width">
+            <mat-label>Claims</mat-label>
+            <textarea name="claims" #myClaims="ngModel" [(ngModel)] = "claims" matInput placeholder="Cut/Paste your claims here" required></textarea>
+            <em class="error" *ngIf="myClaims.invalid && myClaims.touched">Claims is required</em>
+        </mat-form-field>
+        
+        <button mat-button matStepperNext [disabled]="myClaimsForm.form.invalid" type="submit">Next</button>
+
+        <div class="claimsError" *ngIf="claimsError">
+            {{claimsErrorMessage}}
+        </div>
+
+    </form>
+
 </div>

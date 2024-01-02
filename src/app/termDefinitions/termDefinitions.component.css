@@ -1,0 +1,17 @@
+.termDefintions-full-width {
+  width: 100%;
+} 
+
+.termDefinitionsError {
+    margin: 25px 0;
+    color: red;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  em.error {
+    padding: 2px 5px;
+    background-color: #c2185b;
+    color: white;
+    font-style: normal;
+  }

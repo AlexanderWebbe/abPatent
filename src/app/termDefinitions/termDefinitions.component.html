@@ -3,4 +3,22 @@
         {{pageTitle}}
     </div>
 
+    {{termDefinitions}}
+
+    <form class="termDefinition-form" #myTermDefinitionsForm="ngForm" (ngSubmit)="processTermDefinitions()">
+        <mat-form-field class="termDefintions-full-width">
+            <mat-label>Term Definitions</mat-label>
+            <textarea name="termDefinitions" #myTermDefinitions="ngModel" [(ngModel)]="termDefinitions" matInput placeholder="Review Term Definitions" required></textarea>
+            <em class="error" *ngIf="myTermDefinitions.invalid && myTermDefinitions.touched">Term Definitions is required</em>
+        </mat-form-field>
+
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext [disabled]="myTermDefinitionsForm.form.invalid" >Next</button>
+
+        <div class="termDefinitionsError" *ngIf="termDefinitionsError">
+            {{termDefinitionsErrorMessage}}
+        </div>
+
+    </form>
+
 </div>
