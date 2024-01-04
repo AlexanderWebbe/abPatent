@@ -15,3 +15,12 @@
     color: white;
     font-style: normal;
   }
+
+  button{
+    margin: 10px 5px;;    
+  }
+
+  textarea.mat-input-element {
+    min-height: 350px;
+    background-color: lightgray;
+  }
